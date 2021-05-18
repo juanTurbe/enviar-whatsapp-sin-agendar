@@ -1,14 +1,19 @@
+const btnEnviar = document.getElementById('btn-numero');
 let valorNumero = document.getElementById('numero'),
-btnEnviar = document.getElementById('btn-numero'),
 enlace = document.createElement('a'),
 aviso = document.createElement('p');
 
+btnEnviar.addEventListener('click', enviarWhatsApp);
 
-
-btnEnviar.addEventListener('click', function(){
+enlace.addEventListener('click', ()=> {
+    location.reload();
+});
+ 
+function enviarWhatsApp() {
     if (valorNumero.value === "" ) {
         aviso.style.color = "red";
-        aviso.textContent = 'Ingresa un número';
+        aviso.textContent = 'Por favor, ingresa un número';
+        aviso.style.fontWeight = "bold";
         document.querySelector('.lista').appendChild(aviso);
     } else {
         aviso.style.display = "none";
@@ -18,8 +23,4 @@ btnEnviar.addEventListener('click', function(){
         enlace.textContent = 'Enviar por Whatsapp';
         document.querySelector('.botones').appendChild(enlace);
     }
-
-    enlace.addEventListener('click', function(){
-        location.reload();
-    });
-});
+}

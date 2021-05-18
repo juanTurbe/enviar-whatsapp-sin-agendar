@@ -23,6 +23,12 @@ input#numero {
     border: solid 2px #fbfbfb;
 }
 
+.contenedor small {
+    display:inline-block;
+    margin:8px 0;
+    color:#faf3f3;
+}
+
 .lista {
     padding-left:20px;
     font-size: 14px;
